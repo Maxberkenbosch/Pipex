@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_puthex_count_upper.c                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: mberkenb <mberkenb@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/01/25 16:17:04 by mberkenb      #+#    #+#                 */
+/*   Updated: 2022/01/25 16:21:42 by mberkenb      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
 int	ft_puthex_count_upper(unsigned int n, int fd)
 {
 	char				c;

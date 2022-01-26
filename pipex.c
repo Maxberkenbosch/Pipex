@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   pipex.c                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: mberkenb <mberkenb@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/01/25 15:49:23 by mberkenb      #+#    #+#                 */
+/*   Updated: 2022/01/25 17:33:36 by mberkenb      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include "pipex.h"
 #include <fcntl.h>
@@ -16,6 +28,8 @@ t_p	get_path(char **envp, t_p p)
 		i++;
 	}
 	p.path = ft_substr_cmd(p.path, 5, ft_strlen(p.path), 1);
+	if (p.path == 0)
+		exit (1);
 	return (p);
 }
 

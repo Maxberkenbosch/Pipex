@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_strtrim.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: mberkenb <mberkenb@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/01/25 16:18:27 by mberkenb      #+#    #+#                 */
+/*   Updated: 2022/01/25 16:22:30 by mberkenb      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
 static int	ft_begin(char const *s1, char const *set);
 
 static int	ft_end(char const *s1, char const *set);

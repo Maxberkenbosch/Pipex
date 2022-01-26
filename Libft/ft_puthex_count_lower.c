@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_puthex_count_lower.c                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: mberkenb <mberkenb@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/01/25 16:17:01 by mberkenb      #+#    #+#                 */
+/*   Updated: 2022/01/25 16:21:40 by mberkenb      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
 int	ft_puthex_count_lower(unsigned long int n, int fd)
 {
 	char				c;

@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_memmove.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: mberkenb <mberkenb@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/01/25 16:16:47 by mberkenb      #+#    #+#                 */
+/*   Updated: 2022/01/25 16:20:18 by mberkenb      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
 static char	*ft_small_dst(int len, char *d, const char *s);
 
 static char	*ft_big_dst(int len, char *lastd, const char *lasts);

@@ -1,27 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_split.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: mberkenb <mberkenb@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/01/25 16:17:34 by mberkenb      #+#    #+#                 */
+/*   Updated: 2022/01/25 16:23:17 by mberkenb      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
 static int	ft_word_counter(char const *s, char c);
 
-static int	ft_alloc(char **Array, char *s, int a, char c);
+static int	ft_alloc(char **array, char *s, int a, char c);
 
-static void	ft_free(char **Array, int a);
+static void	ft_free(char **array, int a);
 
 char	**ft_split(char const *s, char c)
 {
-	char	**Array;
+	char	**array;
 	int		a;
 
 	if (!s)
 		return (0);
-	Array = malloc ((ft_word_counter(s, c) + 1) * sizeof(char *));
-	if (!Array)
+	array = malloc ((ft_word_counter(s, c) + 1) * sizeof(char *));
+	if (!array)
 		return (0);
 	a = 0;
-	a = ft_alloc(Array, (char *)s, a, c);
-	Array[a] = NULL;
-	return (Array);
+	a = ft_alloc(array, (char *)s, a, c);
+	array[a] = NULL;
+	return (array);
 }
 
-static int	ft_alloc(char **Array, char *s, int a, char c)
+static int	ft_alloc(char **array, char *s, int a, char c)
 {
 	size_t	len;
 	int		i;
@@ -38,9 +51,9 @@ static int	ft_alloc(char **Array, char *s, int a, char c)
 		{
 			while (s[i + len] != c && s[i + len])
 				len++;
-			Array[a] = ft_substr(s, i, len);
-			if (!Array[a])
-				ft_free(Array, a);
+			array[a] = ft_substr(s, i, len);
+			if (!array[a])
+				ft_free(array, a);
 			i += len;
 			a++;
 		}
@@ -75,12 +88,12 @@ static int	ft_word_counter(char const *s, char c)
 	return (counter);
 }
 
-static void	ft_free(char **Array, int a)
+static void	ft_free(char **array, int a)
 {
 	while (a > 0)
 	{
-		free(Array[a]);
+		free(array[a]);
 		a--;
 	}
-	free(Array);
+	free(array);
 }
