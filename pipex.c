@@ -6,7 +6,7 @@
 /*   By: mberkenb <mberkenb@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/25 15:49:23 by mberkenb      #+#    #+#                 */
-/*   Updated: 2022/01/25 17:33:36 by mberkenb      ########   odam.nl         */
+/*   Updated: 2022/01/31 11:03:21 by mberkenb      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,8 @@ int	pipex(t_p p, char **envp)
 	pid_t	child1;
 	pid_t	child2;
 
-	pipe(end);
+	if (pipe(end) == -1)
+		perror("Pipe: ");
 	p = get_path(envp, p);
 	p = parse_path(p);
 	child1 = fork();

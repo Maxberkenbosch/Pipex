@@ -15,11 +15,10 @@ OBJS = $(FILES:.c=.o)
 %.o : %.c pipex.h
 	@$(CC) $(CFLAGS) -c $<
 
-all: libft | $(NAME)
+all: $(NAME)
 
-$(NAME): ./Libft/libft.a $(OBJS)
-	@$(COMPILE) $(ARCHIVE) $(OBJS) -o $(NAME)
-	@echo "Creating executable"
+$(NAME): $(ARCHIVE) $(OBJS)
+	$(COMPILE) $(ARCHIVE) $(OBJS) -o $(NAME)
 
 clean:
 	@rm -rf $(OBJS)
@@ -31,7 +30,7 @@ fclean: clean
 	@echo "Removing executable file"
 	@$(MAKE) fclean -C ./Libft/
 
-libft:
+$(ARCHIVE):
 	@$(MAKE) bonus -C ./Libft/
 
 re: fclean | all
